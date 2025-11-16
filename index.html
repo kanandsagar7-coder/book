@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI绘本生成器 v2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-menu-screen" class="screen">
+        <h1>欢迎来到AI绘本生成器</h1>
+        <p>请输入一个主题，AI将为您生成一本精美的绘本。</p>
+        <input type="text" id="topic-input" placeholder="例如：一只勇敢的小兔子">
+        <button id="generate-btn">生成绘本</button>
+        <button id="gallery-btn">我的作品库</button>
+    </div>
+    <div id="loading-screen" class="screen hidden">
+        <div class="spinner"></div>
+        <p>正在为您生成绘本，请稍候...</p>
+    </div>
+    <div id="storybook-screen" class="screen hidden">
+        <div id="storybook"></div>
+        <div class="navigation-buttons">
+            <button id="prev-page-btn" disabled>上一页</button>
+            <button id="next-page-btn">下一页</button>
+        </div>
+        <div class="action-buttons">
+            <button id="back-to-main-menu-btn">返回主菜单</button>
+            <button id="save-pdf-btn">保存为PDF</button>
+            <button id="save-to-gallery-btn">保存到作品库</button>
+        </div>
+    </div>
+    <div id="gallery-screen" class="screen hidden">
+        <h1>我的作品库</h1>
+        <div id="gallery-container"></div>
+        <button id="back-from-gallery-btn">返回主菜单</button>
+    </div>
+    <audio id="bg-music" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <button id="music-toggle-btn">🎵</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
