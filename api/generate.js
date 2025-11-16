@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
 
   try {
     // 故事生成 (Gemini Pro)
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
     const storyPrompt = `为5岁儿童创作关于“${topic}”的10页绘本故事。要求积极温暖，语言简单。每个段落以“PAGE:”开头。`;
     const result = await model.generateContent(storyPrompt);
     const storyText = await result.response.text();
