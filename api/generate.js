@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
     // 图片生成 (Stable Diffusion)
     const imagePromises = storyPages.map(pageText => {
       const imagePrompt = `award winning illustration for a children's storybook, cinematic, beautiful lighting, vibrant colors, cute, watercolor style. The scene is: ${pageText}`;
-      return fetch(`${stabilityApiHost}/v1/generation/stable-diffusion-v1-6/text-to-image`, {
+      return fetch(`${stabilityApiHost}/v1/generation/stable-diffusion-xl-1024-v1-0/text-to-image`, {      
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
